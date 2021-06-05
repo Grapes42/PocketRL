@@ -22,3 +22,4 @@ def handle_keys(key):
 
     # No key was pressed
     return {}
+    
