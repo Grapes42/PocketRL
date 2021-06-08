@@ -49,9 +49,11 @@ def main():
 
         if move:
             dx, dy = move
-
-            if not game_map.is_blocked(player.x + dx, player.y + dy):
-                player.move(dx, dy)
+            if (not player.x+dx < 0) and (not player.x+dx > map_width) and (not player.y+dy < 0) and (not player.y+dy > map_height):
+                try:
+                    if not game_map.is_blocked(player.x + dx, player.y + dy):
+                        player.move(dx, dy)
+                except: print("no crash, maybe fix")
 
         if exit:
             return True
